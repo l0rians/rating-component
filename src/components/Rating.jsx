@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 
-const Rating = ({ onSubmit }) => {
+const Rating = ({ setRating }) => {
   const [selectedRating, setSelectedRating] = useState(null);
 
-  const handleRatingClick = (rating) => {
-    setSelectedRating(rating);
-  };
-
+  console.log("The Number: ", selectedRating);
   const handleSubmit = () => {
     if (selectedRating) {
-      onSubmit(selectedRating);
+      setRating(selectedRating);
     }
   };
 
@@ -31,13 +28,13 @@ const Rating = ({ onSubmit }) => {
           <button
             key={rating}
             className={selectedRating === rating ? "selected" : ""}
-            onClick={() => handleRatingClick(rating)}
+            onClick={() => setSelectedRating(rating)}
           >
             {rating}
           </button>
         ))}
       </div>
-      <button type="submit" onClick={handleSubmit} disabled={!selectedRating}>
+      <button type="submit" onClick={handleSubmit}>
         SUBMIT
       </button>
     </div>

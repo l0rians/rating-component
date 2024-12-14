@@ -86,16 +86,6 @@ button.selected {
   color: var(--neutral-dark-blue);
 }
 
-button:disabled {
-  background-color: var(--neutral-light-grey);
-  color: var(--neutral-dark-blue);
-  cursor: not-allowed;
-}
-
-button:disabled:hover {
-  background-color: var(--neutral-light-grey);
-}
-
 button[type="submit"] {
   background-color: var(--primary-orange);
   color: black;

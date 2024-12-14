@@ -6,17 +6,10 @@ import "./App.css";
 const App = () => {
   const [rating, setRating] = useState(null);
 
-  const handleRatingSubmit = (selectedRating) => {
-    setRating(selectedRating);
-  };
-
+  console.log(rating);
   return (
     <div className="app">
-      {rating ? (
-        <ThankYou rating={rating} />
-      ) : (
-        <Rating onSubmit={handleRatingSubmit} />
-      )}
+      {rating ? <ThankYou rating={rating} /> : <Rating setRating={setRating} />}
     </div>
   );
 };
